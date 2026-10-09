@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f7fa" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Staff Login | UPVebx</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="admin-body staff-body">
+  <header class="admin-header"><a class="brand" href="/" aria-label="UPVebx home"><img src="/upvebx-mark.svg" alt="" /><span>UPVebx <i>/ Staff</i></span></a><a class="admin-back" href="/admin.html">Admin sign in</a></header>
+  <main class="admin-shell">
+    <section class="admin-heading"><span class="eyebrow">STAFF CALLING</span><h1>Business calls</h1><p>Work through your assigned businesses and save each call result.</p></section>
+    <section class="admin-panel staff-login-panel" id="staff-login-panel"><h2>Staff Login</h2><p>Sign in with the staff account provided by your administrator.</p><form id="staff-login-form"><label>Email<input type="email" name="email" autocomplete="username" required></label><label>Password<input type="password" name="password" autocomplete="current-password" required></label><button class="admin-button" type="submit">Sign in</button></form><p class="admin-status" id="staff-login-status" aria-live="polite"></p></section>
+    <section id="staff-dashboard" hidden>
+      <div class="dashboard-top"><div><span class="eyebrow">SIGNED IN</span><p id="staff-name"></p></div><button class="admin-button admin-button-quiet" id="staff-sign-out" type="button">Sign out</button></div>
+      <section class="admin-panel"><div class="list-heading"><div><h2>Assigned businesses</h2><p id="staff-progress"></p></div><button class="admin-button admin-button-quiet" id="staff-refresh" type="button">Refresh</button></div>
+        <div class="call-filters"><input id="staff-search" type="search" placeholder="Search business or number"><select id="staff-status-filter"><option value="">All call statuses</option><option>Not Called</option><option>Called</option></select><select id="staff-response-filter"><option value="">All responses</option></select></div>
+        <div class="business-table-wrap"><table class="business-table staff-business-table"><thead><tr><th>Business Name</th><th>Contact Number</th><th>Call Status</th><th>Response</th><th>Follow-up Date</th><th>Notes</th><th>Action</th></tr></thead><tbody id="staff-business-list"></tbody></table></div>
+        <p class="admin-status" id="staff-data-status" aria-live="polite"></p>
+      </section>
+    </section>
+  </main>
+  <script type="module" src="/src/staff.js"></script>
+</body>
+</html>
